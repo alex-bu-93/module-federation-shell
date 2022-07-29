@@ -7,9 +7,11 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      {path: 'lazy', loadChildren: () => import('./lazy').then(m => m.LazyModule)},
+      {path: '', loadChildren: () => import('./lazy').then(m => m.LazyModule)},
       // @ts-ignore
-      {path: 'mfe1', loadChildren: () => import('mfe1/Module').then(m => m.LazyModule)},
+      {path: 'mfe1-lazy', loadChildren: () => import('mfe1/lazyModule').then(m => m.LazyModule)},
+      // @ts-ignore
+      {path: 'mfe1-lazy-second', loadChildren: () => import('mfe1/lazySecondModule').then(m => m.LazySecondModule)},
     ])
   ],
   declarations: [AppComponent],
